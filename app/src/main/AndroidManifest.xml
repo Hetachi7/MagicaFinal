@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Magica_Colombia"
+        tools:ignore="Instantiatable"
+        tools:targetApi="31">
+        <activity
+            android:name=".DepaVichada"
+            android:exported="false" />
+        <activity
+            android:name=".DepaVaupes"
+            android:exported="false" />
+        <activity
+            android:name=".DepaValleCauca"
+            android:exported="false" />
+        <activity
+            android:name=".DepaTolima"
+            android:exported="false" />
+        <activity
+            android:name=".DepaSucre"
+            android:exported="false" />
+        <activity
+            android:name=".DepaSantander"
+            android:exported="false" />
+        <activity
+            android:name=".DepaRisaralda"
+            android:exported="false" />
+        <activity
+            android:name=".DpeaQuindio"
+            android:exported="false" />
+        <activity
+            android:name=".DepaPutumayo"
+            android:exported="false" />
+        <activity
+            android:name=".DepaNSantander"
+            android:exported="false" />
+        <activity
+            android:name=".DepaNarino"
+            android:exported="false" />
+        <activity
+            android:name=".DepaMeta"
+            android:exported="false" />
+        <activity
+            android:name=".DepaMagdalena"
+            android:exported="false" />
+        <activity
+            android:name=".DepaHuila"
+            android:exported="false" />
+        <activity
+            android:name=".DepaGuaviare"
+            android:exported="false" />
+        <activity
+            android:name=".DepaGuajira"
+            android:exported="false" />
+        <activity
+            android:name=".DepaGuainia"
+            android:exported="false" />
+        <activity
+            android:name=".DepaCundinamarca"
+            android:exported="false" />
+        <activity
+            android:name=".DepaCordoba"
+            android:exported="false" />
+        <activity
+            android:name=".DepaChoco"
+            android:exported="false" />
+        <activity
+            android:name=".DepaCesar"
+            android:exported="false" />
+        <activity
+            android:name=".DepaCauca"
+            android:exported="false" />
+        <activity
+            android:name=".DepaCasanare"
+            android:exported="false" />
+        <activity
+            android:name=".DepaCaqueta"
+            android:exported="false" />
+        <activity
+            android:name=".DepaCaldas"
+            android:exported="false" />
+        <activity
+            android:name=".DepaBoyaca"
+            android:exported="false" />
+        <activity
+            android:name=".DepaBolivar"
+            android:exported="false" />
+        <activity
+            android:name=".DepaAtlantico"
+            android:exported="false" />
+        <activity
+            android:name=".DepaArauca"
+            android:exported="false" />
+        <activity
+            android:name=".DepaAntioquia"
+            android:exported="false" />
+        <activity
+            android:name=".Perfil"
+            android:exported="false" />
+        <activity
+            android:name=".DetalleHistoriaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Historia4Ama"
+            android:exported="false" />
+        <activity
+            android:name=".Historia3Ama"
+            android:exported="false" />
+        <activity
+            android:name=".Historia2Ama"
+            android:exported="false" />
+        <activity
+            android:name=".Historia1Ama"
+            android:exported="false" />
+        <activity
+            android:name=".Recuperar"
+            android:exported="false" />
+        <activity
+            android:name=".Sing_in"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
+            android:name=".SubirHistoria"
+            android:exported="false" />
+        <activity
+            android:name=".ReportarError"
+            android:exported="false" />
+        <activity
+            android:name=".DepaAmazonas"
+            android:exported="false" />
+        <activity
+            android:name=".Historias"
+            android:exported="false" />
+        <activity
+            android:name=".Home"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreen"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".HistoriaFragment4">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+        <TextView
+            android:id="@+id/titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:textColor="#8B0000"
+            android:text="Titulo de la historia "
+            android:textSize="25dp" />
+
+        <ImageView
+            android:id="@+id/imagen"
+            android:layout_width="201dp"
+            android:layout_height="149dp"
+            android:layout_gravity="start"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/guando" />
+
+        <TextView
+            android:id="@+id/Historia2"
+            android:layout_width="wrap_content"
+            android:layout_height="343dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/hoja"
+            android:text="                                                                           Cuenta la historia que la palabra Inírida significa “espejito de sol”, un nombre muy bonito para una indígena que habita en el cerro Pajarito desde hace siglos. Dicen que desde niña, Inírida era tan bella que todos los hombres de la región querían casarse con ella. Pero la joven no se quería casar con ninguno y rechazaba cuanta propuesta le hacían.Un día,"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            tools:ignore="RtlCompat" />
+
+        <Button
+            android:layout_width="61dp"
+            android:layout_height="69dp"
+            android:layout_below="@+id/Historia2"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="-14dp"
+            android:background="@drawable/derecha"/>
+
+        <Button
+            android:id="@+id/playButton"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_marginLeft="100dp"
+            android:backgroundTint="#8B0000"
+            android:layout_height="wrap_content"
+            android:text="Reproducir Audio" />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showin="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/perfil"
+            android:icon="@drawable/perfilapp"
+            android:title="Perfil"
+            />
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/baseline_home_24"
+            android:title="Home"
+
+            />
+        <item
+            android:id="@+id/message"
+
+            android:title="Reportar Error"
+            />
+
+        <item
+            android:id="@+id/depart"
+            android:icon="@drawable/mapa"
+            android:title="Departamento"
+            />
+        <item
+            android:id="@+id/Subir"
+            android:icon="@drawable/baseline_add_circle_24"
+            android:title="Subir Historia"
+            />
+        <item
+            android:id="@+id/historial"
+            android:icon="@drawable/baseline_add_circle_24"
+            android:title="Mis Historias"
+            />
+        <item
+            android:id="@+id/salir"
+
+            android:title="Salir"
+            />
+    </group>
+
+</menu>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".Perfil">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/perfilimg"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/chayan"
+            />
+        <TextView
+            android:id="@+id/acerca"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:textColor="@color/white"
+            android:layout_below="@id/text2"
+            android:text="acerca de mi"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:id="@+id/txt1"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:textColor="@color/white"
+            android:layout_below="@+id/perfilimg"
+            android:text="Juanito Alimaña"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:textColor="@color/white"
+            android:text="con mucha maña llega al mostrador"
+            android:layout_below="@+id/txt1"
+            android:layout_centerHorizontal="true"
+            android:textSize="15dp"
+            />
+        <TextView
+            android:id="@+id/edad"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:textColor="@color/white"
+            android:text="Edad"
+            android:layout_below="@+id/acerca"
+            android:layout_centerHorizontal="true"
+            android:textSize="15dp"
+            />
+        <TextView
+            android:id="@+id/telefon0"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:textColor="@color/white"
+            android:text="telefono"
+            android:layout_below="@+id/edad"
+            android:layout_centerHorizontal="true"
+            android:textSize="15dp"
+            />
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:textColor="@color/white"
+            android:text="correo"
+            android:layout_below="@+id/telefon0"
+            android:layout_centerHorizontal="true"
+            android:textSize="15dp"
+            />
+        <FrameLayout
+            android:id="@+id/contenedor_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/edit"
+            android:layout_marginTop="10dp" />
+
+        <Button
+            android:id="@+id/edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Editar Perfil"
+            android:backgroundTint="#8B0000"
+            android:layout_below="@id/email"
+            android:layout_centerHorizontal="true"
+            />
+
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
