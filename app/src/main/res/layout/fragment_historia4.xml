@@ -40,12 +40,15 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/hoja"
-            android:text="                                                                           Cuenta la historia que la palabra Inírida significa “espejito de sol”, un nombre muy bonito para una indígena que habita en el cerro Pajarito desde hace siglos. Dicen que desde niña, Inírida era tan bella que todos los hombres de la región querían casarse con ella. Pero la joven no se quería casar con ninguno y rechazaba cuanta propuesta le hacían.Un día,"
+            android:text="
+                                                                             Cuenta la historia que la palabra Inírida significa “espejito de sol”, un nombre muy bonito para una indígena que habita en el cerro Pajarito desde hace siglos. Dicen que desde niña, Inírida era tan bella que todos los hombres de la región querían casarse con ella. Pero la joven no se quería casar con ninguno y rechazaba cuanta propuesta le hacían.Un día,"
             android:textAlignment="center"
+            android:textColor="@color/black"
             android:textSize="18dp"
             tools:ignore="RtlCompat" />
 
         <Button
+            android:id="@+id/next"
             android:layout_width="61dp"
             android:layout_height="69dp"
             android:layout_below="@+id/Historia2"

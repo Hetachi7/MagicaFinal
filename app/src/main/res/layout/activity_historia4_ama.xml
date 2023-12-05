@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+            android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp">
         <TextView
@@ -46,11 +46,13 @@
             tools:ignore="RtlCompat" />
 
         <Button
-            android:layout_width="61dp"
-            android:layout_height="69dp"
+            android:id="@+id/next2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_below="@+id/Historia2"
-            android:layout_marginLeft="300dp"
+            android:layout_marginLeft="280dp"
             android:layout_marginTop="-14dp"
+            android:backgroundTint="@color/black"
             android:background="@drawable/derecha" />
 
         <Button

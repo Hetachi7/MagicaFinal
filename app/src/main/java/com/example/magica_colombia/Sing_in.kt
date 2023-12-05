@@ -1,80 +1,83 @@
 package com.example.magica_colombia
 
-import android.annotation.SuppressLint
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
-import com.google.firebase.FirebaseApp
-import com.google.firebase.auth.FirebaseAuth
+import androidx.appcompat.app.AppCompatActivity
+import com.example.magica_colombia.retrofit.retrofit
+import com.example.magica_colombia.respons.RespuestaDatos
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class Sing_in : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
+
+    private lateinit var userNameEditText: EditText
+    private lateinit var emailEditText: EditText
+    private lateinit var passwordEditText: EditText
+    private lateinit var confirmPasswordEditText: EditText
+    private lateinit var signUpButton: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        FirebaseApp.initializeApp(this)
+        setContentView(R.layout.activity_sing_in) // Reemplaza con el nombre correcto de tu layout
 
-        setContentView(R.layout.activity_sing_in)
+        // Obtén referencias a las vistas
+        userNameEditText = findViewById(R.id.name)
+        emailEditText = findViewById(R.id.email1)
+        passwordEditText = findViewById(R.id.password2)
+        confirmPasswordEditText = findViewById(R.id.password3)
+        signUpButton = findViewById(R.id.sing_in2)
 
-        val nameEditText: EditText = findViewById(R.id.name)
-        val emailEditText: EditText = findViewById(R.id.email1)
-        val passwordEditText: EditText = findViewById(R.id.password2)
-        val registerButton: Button = findViewById(R.id.sing_in2)
-        val Singintbtn2=findViewById <Button>(R.id.sing_in2)
+        // Agrega un Listener al botón de registro
+        signUpButton.setOnClickListener {
+            // Llama a la función para realizar el registro
+            registerUser()
+        }
+    }
 
-        val auth = FirebaseAuth.getInstance()
-        Singintbtn2.setOnClickListener(viewListener)
+    private fun registerUser() {
+        val userName = userNameEditText.text.toString()
+        val email = emailEditText.text.toString()
+        val password = passwordEditText.text.toString()
+        val confirmPassword = confirmPasswordEditText.text.toString()
 
-        val Cuentabtn=findViewById <TextView>(R.id.cuenta1)
-        Cuentabtn.setOnClickListener(viewListener)
-        registerButton.setOnClickListener {
-            val name = nameEditText.text.toString()
-            val email = emailEditText.text.toString()
-            val password = passwordEditText.text.toString()
+        // Verifica que los campos no estén vacíos
+        if (userName.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
+            Toast.makeText(this, "Todos los campos son obligatorios", Toast.LENGTH_SHORT).show()
+            return
+        }
 
-            if (name.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()) {
-                auth.createUserWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(this) { task ->
-                        if (task.isSuccessful) {
-                            // Registro exitoso
-                            val user = auth.currentUser
-                            if (user != null) {
-                                // El usuario se ha creado y está disponible
-                                // Puedes imprimir el UID del usuario para verificar
-                                Log.d("Registro", "Usuario creado con UID: ${user.uid}")
-                            } else {
-                                // Algo salió mal, el usuario es nulo
-                                Log.e("Registro", "Usuario nulo después del registro exitoso")
-                            }
+        // Verifica que las contraseñas coincidan
+        if (password != confirmPassword) {
+            Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
+            return
+        }
 
-                            // Puedes agregar más lógica aquí según tus necesidades
-                        } else {
-                            // Si falla el registro, muestra un mensaje al usuario
-                            Toast.makeText(this, "Error en el registro", Toast.LENGTH_SHORT).show()
-                        }
-                    }
-            } else {
-                Toast.makeText(this, "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show()
+        // Realiza la llamada a la API para el registro
+        val call = retrofit.apiService.signUp(userName, email, password, confirmPassword)
+
+        call.enqueue(object : Callback<RespuestaDatos> {
+            override fun onResponse(call: Call<RespuestaDatos>, response: Response<RespuestaDatos>) {
+                if (response.isSuccessful) {
+                    // Registro exitoso
+                    Toast.makeText(this@Sing_in, "Registro exitoso", Toast.LENGTH_SHORT).show()
+                    // Puedes realizar otras acciones aquí, como navegar a otra actividad
+                    Log.d("Registro", "Éxito: ${response.body()}")
+                } else {
+                    // Error en la respuesta de la API
+                    Toast.makeText(this@Sing_in, "Error en el registro", Toast.LENGTH_SHORT).show()
+                    Log.e("Registro", "Error en el registro. Código de error: ${response.code()}")
+                }
             }
-        }
-    }
-    fun enviarhome(){
-        val intent: Intent = Intent ( this,Home::class.java)
-        startActivity(intent)
-    }
-    fun enviarLogin(){
-        val intent: Intent = Intent(this,Login::class.java)
-        startActivity(intent)
-    }
-    private val viewListener = View.OnClickListener {
-        when(it.id){
-            R.id.sing_in2->enviarhome()
-            R.id.cuenta1->enviarLogin()
-        }
+
+
+            override fun onFailure(call: Call<RespuestaDatos>, t: Throwable) {
+                // Error en la llamada a la API
+                Toast.makeText(this@Sing_in, "Error en la conexión", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 }

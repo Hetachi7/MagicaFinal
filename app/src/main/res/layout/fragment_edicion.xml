@@ -10,7 +10,6 @@
     <!-- fragment_editar_perfil.xml -->
 
     <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -24,21 +23,24 @@
             android:id="@+id/editTextEdad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextNombre"
             android:hint="Edad" />
 
         <EditText
             android:id="@+id/editTextTelefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextEdad"
             android:hint="Teléfono" />
+
+        <!-- Otros elementos para la edición del perfil -->
 
         <EditText
             android:id="@+id/editTextCorreo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="340dp"
+            android:layout_below="@+id/editTextTelefono"
             android:hint="Correo" />
-
-        <!-- Otros elementos para la edición del perfil -->
 
         <Button
             android:id="@+id/btnGuardar"

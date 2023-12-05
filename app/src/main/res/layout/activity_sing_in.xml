@@ -35,7 +35,7 @@
         android:layout_width="337dp"
         android:layout_height="40dp"
         android:layout_marginTop="40dp"
-        android:hint="@string/name"
+        android:hint="Usuario"
         android:imeActionLabel="@string/name"
         android:imeOptions="actionDone"
         android:inputType="textPersonName"
@@ -70,7 +70,7 @@
         android:layout_width="337dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
-        android:hint="@string/prompt_password"
+        android:hint="Contraseña"
         android:imeActionLabel="@string/action_sign_in_short"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
@@ -83,6 +83,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email1" />
 
+    <EditText
+        android:id="@+id/password3"
+        android:layout_width="337dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:hint="COnfirmar contraseña"
+        android:imeActionLabel="@string/action_sign_in_short"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:selectAllOnFocus="true"
+        android:textAlignment="center"
+        android:textColorHint="#8B0000"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password2" />
+
+
     <TextView
         android:id="@+id/cuenta1"
         android:layout_width="wrap_content"
@@ -93,7 +112,7 @@
         android:textColor="#8B0000"
         android:textSize="15dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password2" />
+        app:layout_constraintTop_toBottomOf="@+id/password3" />
 
     <Button
         android:id="@+id/sing_in2"
