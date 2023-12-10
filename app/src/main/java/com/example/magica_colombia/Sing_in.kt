@@ -43,7 +43,7 @@ class Sing_in : AppCompatActivity() {
         val email = emailEditText.text.toString()
         val password = passwordEditText.text.toString()
         val confirmPassword = confirmPasswordEditText.text.toString()
-
+        
         // Verifica que los campos no estén vacíos
         if (userName.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
             Toast.makeText(this, "Todos los campos son obligatorios", Toast.LENGTH_SHORT).show()
